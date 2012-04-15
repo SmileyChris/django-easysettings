@@ -15,6 +15,10 @@ The app's `conf` module will look something like this::
     class Settings(AppSettings):
         MYAPP_WIDGETS = ('foo', 'bar')
 
+
+    settings = Settings()
+
+
 Then in your app, rather than `from django.conf import settings`, use
 `from myapp.conf import settings`. For example::
 
