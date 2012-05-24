@@ -9,7 +9,7 @@ except ImportError:
 
 setup(
     name='django-easysettings',
-    version='1.0',
+    version='1.0.1',
     url='http://github.com/SmileyChris/django-easysettings',
     description='Easy app-specific settings for Django',
     long_description=long_description,

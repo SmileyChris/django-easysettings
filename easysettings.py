@@ -33,8 +33,11 @@ Then in your app, rather than `from django.conf import settings`, use
             data['debug_mode'] = True
         # ...
 """
-from django.conf import BaseSettings
 from django.conf import settings as django_settings
+try:
+    from django.conf import BaseSettings
+except ImportError:   # Django <= 1.2
+    from django.conf import Settings as BaseSettings
 
 
 class AppSettings(BaseSettings):
