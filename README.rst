@@ -1,6 +1,6 @@
-==================
+===================
 django-easysettings
-==================
+===================
 
 Easy app-specific settings for Django.
 

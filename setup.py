@@ -1,18 +1,12 @@
 #!/usr/bin/env python
 from distutils.core import setup
 
-try:
-    import easysettings
-    long_description = easysettings.__doc__
-except ImportError:
-    long_description = ''
-
 setup(
     name='django-easysettings',
     version='1.0.1',
     url='http://github.com/SmileyChris/django-easysettings',
     description='Easy app-specific settings for Django',
-    long_description=long_description,
+    long_description=open('README.rst', 'r').read(),
     author='Chris Beaven',
     author_email='smileychris@gmail.com',
     platforms=['any'],
