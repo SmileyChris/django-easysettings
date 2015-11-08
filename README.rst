@@ -10,10 +10,6 @@ Installation
 
 To install, run: ``pip install django-easysettings``
 
-Or for the `development version`__: ``pip install django-easysettings==dev``
-
-__ https://github.com/SmileyChris/django-easysettings/tarball/master#egg=django-easysettings-dev
-
 
 Usage
 =====

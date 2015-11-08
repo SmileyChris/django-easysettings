@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='django-easysettings',
-    version='1.0.1',
+    version='1.0.2',
     url='http://github.com/SmileyChris/django-easysettings',
     description='Easy app-specific settings for Django',
     long_description=open('README.rst', 'r').read(),
