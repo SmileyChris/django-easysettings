@@ -1,1 +1,1 @@
-from easysettings.appsettings import appsettings  # noqa
+from easysettings.app import AppSettings  # noqa
