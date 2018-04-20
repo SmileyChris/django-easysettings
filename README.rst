@@ -2,7 +2,24 @@
 django-easysettings
 ===================
 
+.. image:: https://badge.fury.io/py/django-easysettings.svg
+    :alt: PyPI version
+    :target: https://badge.fury.io/py/django-easysettings
+
+.. image:: https://travis-ci.org/SmileyChris/django-easysettings.svg?branch=master
+    :alt: Build status
+    :target: http://travis-ci.org/SmileyChris/django-easysettings
+
+.. image:: https://codecov.io/gh/SmileyChris/django-easysettings/branch/master/graph/badge.svg
+    :alt: Coverage status
+    :target: https://codecov.io/gh/SmileyChris/django-easysettings
+
+
 Easy app-specific settings for Django.
+
+.. contents::
+    :local:
+    :backlinks: none
 
 
 Installation
