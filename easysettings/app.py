@@ -5,7 +5,7 @@ The standard use is to import and extend :class:`AppSettings` in a `conf`
 module (for example, `myapp/conf.py`), adding attributes for the default
 values of your app-specific settings.
 """
-import django.conf.settings
+from django.conf import settings as django_settings
 
 
 class AppSettings(object):
@@ -15,27 +15,33 @@ class AppSettings(object):
     """
 
     def __getattribute__(self, attr):
-        default_value = super(AppSettings, self).__getattribute__(attr)
         if attr != attr.upper():
-            return default_value
-        if (isinstance(default_value, AppSettings)
-                or issubclass(default_value, AppSettings)):
-            default_value = default_value.default_dict()
+            return super(AppSettings, self).__getattribute__(attr)
         try:
-            settings_value = getattr(django.conf.settings, attr)
+            project_value = self.get_project_value(attr)
         except AttributeError:
-            return default_value
-        if isinstance(default_value, dict):
-            value = default_value.copy()
-            value.update(settings_value)
-            return value
-        return settings_value
+            return self.get_app_setting(attr)
+        if isinstance(project_value, dict) and attr in dir(self):
+            app_value = self.get_app_setting(attr)
+            if isinstance(app_value, dict):
+                value = app_value.copy()
+                value.update(project_value)
+                return value
+        return project_value
+
+    def get_app_setting(self, attr):
+        value = super(AppSettings, self).__getattribute__(attr)
+        if (isinstance(value, AppSettings)
+                or (isinstance(value, type)
+                    and issubclass(value, AppSettings))):
+            return value.default_dict()
+        return value
 
     def get_project_value(self, attr):
-        return getattr(django.conf.settings, attr)
+        return getattr(django_settings, attr)
 
     @classmethod
     def default_dict(cls):
         return dict(
-            (attr, value) for attr, value in dir(cls).items()
+            (attr, getattr(cls, attr)) for attr in dir(cls)
             if attr == attr.upper())
