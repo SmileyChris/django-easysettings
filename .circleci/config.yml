@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: pytest
-          command: pytest run pytest --junitxml=test-reports/junit.xml
+          command: pipenv run pytest --junitxml=test-reports/junit.xml
 
       - store_test_results:
           path: test-reports
