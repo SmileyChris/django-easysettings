@@ -68,3 +68,60 @@ Then in your app, rather than `from django.conf import settings`, use
             context['debug_mode'] = True
         # ...
 
+Dictionaries
+------------
+
+A common pattern is to use a dictionary as a namespace for all an app's
+settings, such as ``settings.MYAPP['settings']``.
+
+Easy-settings handles this fine, overriding any keys provided in the project
+while still having access to the default app settings keys.
+
+You can also use a subclass of an :class:`AppSettings` class to set up a
+dictionary.
+
+.. code:: python
+
+    from easysettings.apps import AppSettings
+
+
+    class MyAppSettings(AppSettings):
+        """
+        MyApp settings
+        """
+        #: Preferred fruit
+        FRUIT = 'Apple'
+        #: Preferred drink
+        DRINK = 'Water'
+
+
+    class Settings(AppSettings):
+        MYAPP = MyAppSettings
+
+
+    settings = Settings()
+
+Legacy Usage
+------------
+
+If previously your app used a common prefix (like `MYAPP_`) you
+can still support projects taht still use these stand-alone legacy settings
+while moving to a ``MYAPP`` dictionary for your settings.
+
+.. code:: python
+
+    from easysettings.legacy import LegacyAppSettings
+
+
+    class Settings(LegacyAppSettings):
+        MYAPP = {'FRUIT': 'Apple'}
+
+
+    settings = Settings()
+
+If a project uses settings like ``MYAPP_FRUIT = 'Banana'`` they will continue
+to work. As soon as a project switches to ``MYAPP``, any ``MYAPP_*`` settings
+will be ignored.
+
+While the legacy app settings class is used, the dictionary settings can still
+be accessed via the prefixed setting (for example, ``settings.MYAPP_FRUIT``).
