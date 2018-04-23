@@ -2,13 +2,9 @@
 django-easysettings
 ===================
 
-.. image:: https://badge.fury.io/py/django-easysettings.svg
-    :alt: PyPI version
-    :target: https://badge.fury.io/py/django-easysettings
-
-.. image:: https://travis-ci.org/SmileyChris/django-easysettings.svg?branch=master
+.. image:: https://circleci.com/gh/SmileyChris/django-easysettings.svg?style=svg
     :alt: Build status
-    :target: http://travis-ci.org/SmileyChris/django-easysettings
+    :target: https://circleci.com/gh/SmileyChris/django-easysettings
 
 .. image:: https://codecov.io/gh/SmileyChris/django-easysettings/branch/master/graph/badge.svg
     :alt: Coverage status

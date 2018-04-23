@@ -30,11 +30,14 @@ jobs:
 
       - run:
           name: pytest
-          command: pipenv run pytest --junitxml=test-reports/junit.xml
+          command: pipenv run pytest --junitxml=test-reports/junit.xml --cov --cov-report html
+
+      - run:
+          name: codecov
+          command: bash <(curl -s https://codecov.io/bash)
 
       - store_test_results:
           path: test-reports
 
       - store_artifacts:
-          path: test-reports
-          destination: test-reports
+          path: htmlcov
