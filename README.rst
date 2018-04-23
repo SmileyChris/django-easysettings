@@ -43,7 +43,7 @@ For example:
 
 .. code:: python
 
-    from easysettings import AppSettings
+    from easysettings.app import AppSettings
 
 
     class Settings(AppSettings):
