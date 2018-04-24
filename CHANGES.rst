@@ -15,12 +15,17 @@ Change Log
   compatibility for prefixed project settings when moving settings to a
   dictionary rather than individual settings with the same prefix.
 
+1.1 (4 April 2017)
+==================
+
+- Django 1.11 compatibility.
+
 1.0.1 (24 May 2012)
 ===================
 
-- Included extra source files
+- Included extra source files.
 
 1.0 (16 April 2012)
 ===================
 
-- Initial release
+- Initial release.
