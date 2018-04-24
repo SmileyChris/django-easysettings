@@ -73,8 +73,7 @@ settings, such as ``settings.MYAPP['settings']``.
 Easy-settings handles this fine, overriding any keys provided in the project
 while still having access to the default app settings keys.
 
-You can also use a subclass of an :class:`AppSettings` class to set up a
-dictionary.
+You can also use a subclass of an ``AppSettings`` class to set up a dictionary.
 
 .. code:: python
 
