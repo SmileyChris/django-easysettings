@@ -6,7 +6,8 @@ Change Log
 ================
 
 - Full rework of project! Import is now
-  ``from easysettings.app import AppSettings``.
+  ``from easysettings.app import AppSettings`` (but left importable from
+  ``easysettings`` for better backwards compatibility).
 
 - Removed isolated settings functionality, unnecessary with a separate settings
   module for tests and/or use of the ``TestCase.settings()`` context manager.
