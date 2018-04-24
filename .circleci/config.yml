@@ -19,8 +19,10 @@ jobs:
           - v1-dependencies-
 
       - run:
-          name: Install tox
-          command: pip install --user tox
+          name: Install dependencies
+          command: :
+            export PATH=$HOME/.local/bin
+            pip install --user tox
 
       - run:
           name: Run tests
