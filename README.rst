@@ -100,7 +100,7 @@ Legacy Usage
 ------------
 
 If previously your app used a common prefix (like `MYAPP_`) you
-can still support projects taht still use these stand-alone legacy settings
+can still support projects that still use these stand-alone legacy settings
 while moving to a ``MYAPP`` dictionary for your settings.
 
 .. code:: python
