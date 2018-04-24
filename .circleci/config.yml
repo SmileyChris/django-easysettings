@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/python:3.6.5
 
@@ -19,8 +19,12 @@ jobs:
           - v1-dependencies-
 
       - run:
-          name: install dependencies
-          command: pipenv install --deploy
+          name: Install tox
+          command: pip install tox
+
+      - run:
+          name: Run tests
+          command: tox
 
       - save_cache:
           paths:
@@ -29,11 +33,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Pipfile.lock" }}
 
       - run:
-          name: test
-          command: pipenv run tox
-
-      - run:
-          name: codecov
+          name: Upload to codecov.io
           command: bash <(curl -s https://codecov.io/bash)
 
       - store_test_results:
