@@ -21,7 +21,8 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            export PATH=$HOME/.local/bin:$PATH
+            echo 'export PATH=$HOME/.local/bin:$PATH' >> $BASH_ENV
+            source $BASH_ENV
             pip install --user tox
 
       - run:
