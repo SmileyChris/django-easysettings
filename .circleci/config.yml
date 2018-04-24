@@ -37,7 +37,9 @@ jobs:
 
       - run:
           name: Upload to codecov.io
-          command: bash <(curl -s https://codecov.io/bash)
+          command: |
+            pip install --user coverage
+            bash <(curl -s https://codecov.io/bash)
 
       - store_test_results:
           path: test-reports
