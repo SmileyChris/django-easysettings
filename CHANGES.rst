@@ -2,8 +2,8 @@
 Change Log
 ==========
 
-2.0 (unreleased)
-================
+2.0 (24 April 2018)
+===================
 
 - Full rework of project! Import is now
   ``from easysettings.app import AppSettings`` (but left importable from
