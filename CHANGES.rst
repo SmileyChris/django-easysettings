@@ -2,6 +2,12 @@
 Change Log
 ==========
 
+2.0.2 (unreleased)
+==================
+
+- Nothing changed yet.
+
+
 2.0.1 (10 August 2019)
 ======================
 
