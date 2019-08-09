@@ -5,7 +5,7 @@ Change Log
 2.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Add Python 3.7 and Django 2.2 to the test matrix.
 
 
 2.0 (24 April 2018)
